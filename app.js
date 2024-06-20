@@ -26,3 +26,10 @@ updateStmt.finalize();
 const deletStmt = database.prepare("DELETE FROM matomabo WHERE name = ?");
 deletStmt.run("bomi");
 deletStmt.finalize;
+
+database.close((err) => {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log('Close the database connection.');
+});
